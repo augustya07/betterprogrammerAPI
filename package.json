@@ -1,13 +1,20 @@
 {
-  "name": "devcamper_api",
+  "name": "betterprogrammerapi",
   "version": "1.0.0",
-  "description": "Devcamper backend API",
+  "description": "betterprogrammer backend API",
   "main": "server.js",
   "scripts": {
     "start": "NODE_ENV=production node server",
-    "dev": "nodemon server"
+    "dev": "nodemon server",
+    "test": "jest --watchAll"
   },
-  "author": "Brad Traversy",
+  "jest": {
+    "testEnvironment": "node",
+    "setupFilesAfterEnv": [
+      "./config/setup.js"
+    ]
+  },
+  "author": "Augustya Sharma",
   "license": "MIT",
   "dependencies": {
     "bcryptjs": "^2.4.3",
@@ -30,6 +37,9 @@
     "xss-clean": "^0.1.1"
   },
   "devDependencies": {
-    "nodemon": "^2.0.12"
+    "jest": "^27.1.0",
+    "mongodb-memory-server": "^6.5.1",
+    "nodemon": "^2.0.12",
+    "supertest": "^6.1.6"
   }
 }
